@@ -1,0 +1,92 @@
+{
+  "dataset": "Tox21 (RDKit 28-dim atom features + 6-dim bond features)",
+  "n_molecules": 7831,
+  "split": "6264/783/784",
+  "features": "rdkit_atom_features(28-dim) + bond_features(6-dim)",
+  "pooling": "mean+max dual pooling",
+  "models": [
+    {
+      "name": "GIN",
+      "params": 122255,
+      "val_auc": 0.8455,
+      "test_auc": 0.85,
+      "task_aucs": [
+        0.823,
+        0.926,
+        0.879,
+        0.927,
+        0.703,
+        0.87,
+        0.916,
+        0.809,
+        0.859,
+        0.753,
+        0.898,
+        0.837
+      ],
+      "time": 368.3
+    },
+    {
+      "name": "GCN",
+      "params": 71948,
+      "val_auc": 0.8653,
+      "test_auc": 0.8282,
+      "task_aucs": [
+        0.78,
+        0.723,
+        0.914,
+        0.905,
+        0.702,
+        0.762,
+        0.869,
+        0.823,
+        0.913,
+        0.751,
+        0.908,
+        0.888
+      ],
+      "time": 551.7
+    },
+    {
+      "name": "GraphSAGE",
+      "params": 108300,
+      "val_auc": 0.8412,
+      "test_auc": 0.8502,
+      "task_aucs": [
+        0.753,
+        0.903,
+        0.89,
+        0.907,
+        0.752,
+        0.855,
+        0.839,
+        0.814,
+        0.893,
+        0.795,
+        0.905,
+        0.896
+      ],
+      "time": 346.4
+    }
+  ],
+  "task_names": [
+    "NR-AR",
+    "NR-AR-LBD",
+    "NR-AhR",
+    "NR-Aromatase",
+    "NR-ER",
+    "NR-ER-LBD",
+    "NR-PPAR-gamma",
+    "SR-ARE",
+    "SR-ATAD5",
+    "SR-HSE",
+    "SR-MMP",
+    "SR-p53"
+  ],
+  "baselines": {
+    "RF": "~0.82",
+    "GIN (文献)": "~0.83",
+    "D-MPNN (文献)": "~0.85",
+    "Graphormer (文献)": "~0.86"
+  }
+}

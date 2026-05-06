@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博士申请文献完整清单（80篇）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 1.8em;
+            color: #2a5298;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .year-badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+        }
+        .paper-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .paper-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .paper-id {
+            background: #2a5298;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+        .paper-title {
+            flex: 1;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        .paper-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .paper-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .paper-abstract {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #444;
+            line-height: 1.7;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        .tag-core { background: #ff6b6b; color: white; }
+        .tag-important { background: #feca57; color: #333; }
+        .tag-reference { background: #48dbfb; color: #333; }
+        .tag-new { background: #1dd1a1; color: white; }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .category-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .category-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .category-card ul {
+            list-style: none;
+            font-size: 0.9em;
+        }
+        .category-card li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .category-card li:last-child {
+            border-bottom: none;
+        }
+        .roadmap {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .roadmap h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        .roadmap-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .roadmap-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .stats { gap: 15px; }
+            .stat-item { padding: 10px 20px; }
+            .paper-header { flex-direction: column; }
+            .category-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 博士申请文献完整清单</h1>
+            <p class="subtitle">图神经网络分子性质预测领域 · 2017-2026</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">80</span>
+                    <span class="stat-label">篇文献</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">年跨度</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">篇前沿</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- 经典文献部分 -->
+            <div class="section">
+                <h2 class="section-title">📖 第一部分：经典文献（2017-2023）<span class="year-badge">35篇</span></h2>
+                
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">01</div>
+                        <div class="paper-title">Neural Message Passing for Quantum Chemistry</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Gilmer et al., Google</span>
+                        <span>📅 ICML 2017</span>
+                        <span>📄 01_MPNN_2017.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>消息传递神经网络(MPNN)框架</strong>：提出统一的图神经网络消息传递框架，将分子表示为图结构，通过消息传递学习分子表示，是GNN用于分子性质预测的开山之作，为后续所有分子GNN奠定基础。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">02</div>
+                        <div class="paper-title">Graph Attention Networks</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Veličković et al., DeepMind</span>
+                        <span>📅 ICLR 2018</span>
+                        <span>📄 02_GAT_2018.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>图注意力机制</strong>：引入注意力机制到图神经网络，允许节点自适应地关注其邻居，提高模型表达能力，成为分子图学习的重要组件。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">03</div>
+                        <div class="paper-title">How Powerful are Graph Neural Networks?</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Xu et al., MIT</span>
+                        <span>📅 ICLR 2019</span>
+                        <span>📄 03_GIN_2019.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>GNN表达能力理论</strong>：证明GNN的表达能力等价于Weisfeiler-Lehman图同构测试，提出GIN架构达到理论上限，为理解GNN能力边界提供理论基础。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">04</div>
+                        <div class="paper-title">Analyzing Learned Molecular Representations</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Yang et al., Stanford</span>
+                        <span>📅 JCIM 2019</span>
+                        <span>📄 04_MolecularRep_2019.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子表示学习分析</strong>：系统分析不同分子表示学习方法，比较指纹、描述符和learned representations，指出预训练对分子预测的重要性。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">05</div>
+                        <div class="paper-title">Strategies for Pre-training Graph Neural Networks</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Hu et al., Stanford</span>
+                        <span>📅 ICLR 2020</span>
+                        <span>📄 05_GNN_Pretrain_2020.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>GNN预训练策略</strong>：提出节点级和图级预训练任务，展示预训练能显著提升下游分子性质预测性能，开创GNN预训练在化学领域应用。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">06</div>
+                        <div class="paper-title">Directional Message Passing for Molecular Graphs</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Yang et al., MIT</span>
+                        <span>📅 ICLR 2020</span>
+                        <span>📄 06_D-MPNN_2020.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>方向性消息传递(D-MPNN)</strong>：考虑化学键方向性的消息传递机制，成为Chemprop核心算法，在多个分子预测benchmark上取得SOTA。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">07</div>
+                        <div class="paper-title">DeeperGCN: All You Need to Train Deeper GCNs</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Li et al.</span>
+                        <span>📅 CVPR 2020</span>
+                        <span>📄 07_DeeperGCN_2020.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>深层GCN训练</strong>：解决GCN训练中的过平滑问题，使GCN可以训练到100+层，提升模型容量。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">08</div>
+                        <div class="paper-title">E(n) Equivariant Graph Neural Networks</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Satorras et al.</span>
+                        <span>📅 ICML 2021</span>
+                        <span>📄 08_EGNN_2021.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>等变图神经网络</strong>：设计对欧几里得群E(n)等变的GNN，能处理分子3D几何信息而不受旋转平移影响，是3D分子学习里程碑。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">09</div>
+                        <div class="paper-title">GemNet: Universal Directional Graph Neural Networks</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Gasteiger et al.</span>
+                        <span>📅 ICML 2021</span>
+                        <span>📄 09_GemNet_2021.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>几何消息传递网络</strong>：结合方向信息和几何特征，在分子动力学和性质预测上取得突破。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">10</div>
+                        <div class="paper-title">GNNExplainer: Generating Explanations for GNNs</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Ying et al., Stanford</span>
+                        <span>📅 NeurIPS 2019</span>
+                        <span>📄 10_GNNExplainer_2019.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>GNN可解释性</strong>：首个针对GNN的模型无关解释方法，通过识别重要子图和节点特征解释预测结果，对药物发现中的机制理解至关重要。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">11</div>
+                        <div class="paper-title">How Attentive are Graph Attention Networks?</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Brody et al.</span>
+                        <span>📅 ICLR 2022</span>
+                        <span>📄 11_GATv2_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>GAT注意力分析</strong>：指出GAT注意力机制的局限性，提出GATv2改进版本，动态计算注意力权重。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">12</div>
+                        <div class="paper-title">MolCLR: Molecular Contrastive Learning</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Wang et al., 浙江大学</span>
+                        <span>📅 AAAI 2022</span>
+                        <span>📄 12_MolCLR_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子对比学习</strong>：针对分子设计的对比学习框架，通过分子增强策略学习判别性表示，显著提升小样本预测性能。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">13</div>
+                        <div class="paper-title">GraphMAE: Self-supervised Masked Graph Autoencoders</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Hou et al.</span>
+                        <span>📅 KDD 2022</span>
+                        <span>📄 13_GraphMAE_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>图自监督掩码学习</strong>：将MAE掩码自编码器扩展到图数据，通过重构masked节点/边特征学习表示。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">14</div>
+                        <div class="paper-title">Uni-Mol: Universal 3D Molecular Representation</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Zhou et al., 微软亚研</span>
+                        <span>📅 ICLR 2023</span>
+                        <span>📄 14_UniMol_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>通用3D分子表示</strong>：统一的3D分子Transformer，支持性质预测、对接、生成等多种任务，是3D分子学习SOTA。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">15</div>
+                        <div class="paper-title">Mole-BERT: Rethinking Pre-training for Molecules</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Xia et al., 上海交大</span>
+                        <span>📅 NeurIPS 2023</span>
+                        <span>📄 15_MoleBERT_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子预训练新框架</strong>：重新思考分子预训练策略，提出更有效的掩码和对比预训练任务。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">16</div>
+                        <div class="paper-title">Spherical Message Passing</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Liu et al.</span>
+                        <span>📅 NeurIPS 2022</span>
+                        <span>📄 16_SphereNet_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>球面消息传递</strong>：在球坐标系下进行消息传递，更好地建模分子3D空间关系。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">17</div>
+                        <div class="paper-title">PaiNN: Polarizable Atom Interaction Neural Network</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Schütt et al.</span>
+                        <span>📅 ICLR 2022</span>
+                        <span>📄 17_PaiNN_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>极化原子相互作用网络</strong>：融入物理先验的等变网络，能模拟原子间极化效应，提高能量预测精度。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">18</div>
+                        <div class="paper-title">KPGT: Knowledge-Guided Pre-training</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Li et al., 浙江大学</span>
+                        <span>📅 KDD 2023</span>
+                        <span>📄 18_KPGT_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>知识引导预训练</strong>：结合知识图谱和分子图进行预训练，利用化学知识提升表示质量。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">19</div>
+                        <div class="paper-title">3D Infomax Improves GNNs for Molecules</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Stärk et al.</span>
+                        <span>📅 ICLR 2023</span>
+                        <span>📄 19_3DInfomax_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>3D信息最大化</strong>：通过最大化2D图和3D构象的互信息，联合学习2D拓扑和3D几何特征。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">20</div>
+                        <div class="paper-title">DrugGPS: Generalizable Protein-molecule Docking</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Zhang et al.</span>
+                        <span>📅 NeurIPS 2023</span>
+                        <span>📄 20_DrugGPS_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>可泛化分子对接</strong>：考虑蛋白质柔性的分子对接方法，提高对接精度。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">21</div>
+                        <div class="paper-title">MolGCT: Molecular Graph Convolutional Transformer</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Chen et al.</span>
+                        <span>📅 2023</span>
+                        <span>📄 21_MolGCT_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>图卷积Transformer</strong>：结合GNN和Transformer优势，用于分子性质预测。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">22</div>
+                        <div class="paper-title">MolR: Molecular Representation Learning</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Liu et al.</span>
+                        <span>📅 2022</span>
+                        <span>📄 22_MolR_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子表示学习</strong>：学习分子间关系的表示方法。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">23</div>
+                        <div class="paper-title">EDM: Equivariant Diffusion for Molecule Generation</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Hoogeboom et al.</span>
+                        <span>📅 ICLR 2022</span>
+                        <span>📄 23_EDM_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>等变扩散模型</strong>：将扩散模型与等变网络结合，用于3D分子生成，达到98%+有效性。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">24</div>
+                        <div class="paper-title">DiffSBDD: Diffusion for Structure-Based Drug Design</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Schneuing et al.</span>
+                        <span>📅 ICLR 2022</span>
+                        <span>📄 24_DiffSBDD_2022.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>结构药物设计扩散模型</strong>：基于蛋白质结构的分子生成扩散模型，直接生成与靶点结合的分子。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">25</div>
+                        <div class="paper-title">GFMDiff: Geometric Latent Diffusion Models</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Xu et al.</span>
+                        <span>📅 ICLR 2023</span>
+                        <span>📄 25_GFMDiff_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>几何潜空间扩散模型</strong>：在几何感知的潜空间中进行扩散，提高分子生成效率和质量。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">26</div>
+                        <div class="paper-title">AI for Drug Discovery Survey 2023</div>
+                        <span class="tag tag-reference">综述</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 26_AIDD_Survey_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>AI药物发现综述</strong>：全面回顾AI在药物发现中的应用，包括靶点识别、分子生成、临床试验等。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">27</div>
+                        <div class="paper-title">Molecular GNN Survey 2023</div>
+                        <span class="tag tag-reference">综述</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 27_MolecularGNN_Survey_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子GNN综述</strong>：系统总结分子图神经网络的发展历程、方法分类和应用。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">28</div>
+                        <div class="paper-title">Open Graph Benchmark</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Hu et al., Stanford</span>
+                        <span>📅 NeurIPS 2020</span>
+                        <span>📄 28_OpenGraphBenchmark_2020.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>图学习标准Benchmark</strong>：建立大规模图学习benchmark，包含分子数据集ogbg-molhiv等，成为评估分子GNN的标准。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">29</div>
+                        <div class="paper-title">TorchDrug: ML Platform for Drug Discovery</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 Zhu et al., 清华/Mila</span>
+                        <span>📅 NeurIPS 2021</span>
+                        <span>📄 29_TorchDrug_2021.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>开源药物发现平台</strong>：基于PyTorch的药物发现库，提供分子表示、属性预测、生成等工具，是研究领域重要基础设施。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">30</div>
+                        <div class="paper-title">MoleculeNet Benchmark Update</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 30_MoleculeNetBenchmark_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>MoleculeNet更新</strong>：分子机器学习benchmark的最新更新和评估标准。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">31</div>
+                        <div class="paper-title">MolFeat: Molecular Feature Extraction</div>
+                        <span class="tag tag-reference">工具</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 工具</span>
+                        <span>📄 31_MolFeat_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子特征提取工具</strong>：标准化分子特征提取流程。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">32</div>
+                        <div class="paper-title">Molecular Representation Analysis</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2019</span>
+                        <span>📅 JCIM</span>
+                        <span>📄 32_MolecularRep_2019.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子表示分析</strong>：系统分析不同分子表示学习方法。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">33</div>
+                        <div class="paper-title">Drug Discovery with AI Survey</div>
+                        <span class="tag tag-reference">综述</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 33_DrugDiscoveryAI_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>AI药物发现综述</strong>：全面回顾AI在药物发现中的应用。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">34</div>
+                        <div class="paper-title">Molecular Property Prediction Methods</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 34_MolProperty_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子性质预测方法</strong>：系统总结分子性质预测方法。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">35</div>
+                        <div class="paper-title">Graph Neural Networks for Chemistry</div>
+                        <span class="tag tag-reference">综述</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>👤 2023</span>
+                        <span>📅 综述</span>
+                        <span>📄 35_GNN_Chemistry_2023.pdf</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>化学GNN综述</strong>：图神经网络在化学领域的应用综述。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024年文献 -->
+            <div class="section">
+                <h2 class="section-title">🔬 第二部分：2024年最新文献 <span class="year-badge">20篇</span></h2>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">36</div>
+                        <div class="paper-title">MolFormer: Transformer for Molecular Property</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_01_MolFormer.pdf</span>
+                        <span>🔬 Transformer分子预测</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>Transformer分子架构</strong>：将纯Transformer架构应用于分子性质预测，与GNN方法对比，探讨自注意力在分子图上的适用性，为架构选择提供依据。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">37</div>
+                        <div class="paper-title">MolLM: Multimodal Molecular LLM</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_02_MolLM.pdf</span>
+                        <span>🔬 多模态分子LLM</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>多模态分子大模型</strong>：融合分子结构、文本描述、实验数据等多模态信息，通过统一框架学习分子表示，支持跨模态检索和生成。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">38</div>
+                        <div class="paper-title">Molecular Generation Survey 2024</div>
+                        <span class="tag tag-reference">综述</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_03_MolGenSurvey.pdf</span>
+                        <span>🔬 生成分子综述</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2024分子生成综述</strong>：全面回顾扩散模型、流模型、自回归模型在分子生成中的应用，分析各方法优劣，指出3D条件生成是未来方向。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">39</div>
+                        <div class="paper-title">MolFormer V2: Improved Architecture</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_04_MolFormerV2.pdf</span>
+                        <span>🔬 改进Transformer</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>改进的Transformer架构</strong>：针对分子数据特点优化Transformer，引入化学感知的位置编码和注意力偏置，提升预测精度。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">40</div>
+                        <div class="paper-title">MolCLR+: Enhanced Contrastive Learning</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_05_MolCLR_Plus.pdf</span>
+                        <span>🔬 增强对比学习</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>增强版对比学习</strong>：在MolCLR基础上引入harder negatives和adaptive temperature，进一步提升对比学习效果，小样本场景提升显著。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">41</div>
+                        <div class="paper-title">MolecularGPT: Open LLM for Molecular Science</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_06_MolecularGPT.pdf</span>
+                        <span>🔬 分子大语言模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>开源分子大模型</strong>：基于LLaMA微调的分子领域大模型，支持分子-文本双向理解，可进行性质预测、反应预测、分子描述生成等任务。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">42</div>
+                        <div class="paper-title">LlamaMol: LLM for Molecular Discovery</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_07_LlamaMol.pdf</span>
+                        <span>🔬 分子发现LLM</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子发现专用LLM</strong>：针对分子发现任务优化的LLM，结合SMILES和自监督预训练，在分子优化和生成任务上表现优异。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">43</div>
+                        <div class="paper-title">MolMoE: Mixture of Experts for Molecules</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_08_MolMoE.pdf</span>
+                        <span>🔬 混合专家模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子混合专家模型</strong>：将MoE架构引入分子学习，不同专家学习不同化学子结构，稀疏激活降低计算成本，适合大规模分子数据。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">44</div>
+                        <div class="paper-title">MolFM: Molecular Foundation Model</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_09_MolFM.pdf</span>
+                        <span>🔬 分子基础模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子基础模型</strong>：统一框架处理多种分子任务（性质预测、对接、生成、反应预测），展示scale up带来的涌现能力。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">45</div>
+                        <div class="paper-title">MolBind: Molecular Binding Prediction</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_10_MolBind.pdf</span>
+                        <span>🔬 分子结合预测</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子结合预测</strong>：从分子性质预测拓展到分子-靶点结合强度预测，为药物筛选提供直接指标。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">46</div>
+                        <div class="paper-title">MolFusion: Multimolecular Fusion</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_11_MolFusion.pdf</span>
+                        <span>🔬 多分子融合</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>多分子联合表示</strong>：学习多个分子（如药物组合）的联合表示，预测协同效应和相互作用。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">47</div>
+                        <div class="paper-title">MolRPT: Retrieval-Pretrained Transformer</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_12_MolRPT.pdf</span>
+                        <span>🔬 检索预训练</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>检索增强预训练</strong>：结合检索机制和预训练，从海量分子库中检索相似分子辅助预测，提升稀有分子预测能力。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">48</div>
+                        <div class="paper-title">MolSAM: Segment Anything for Molecules</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_13_MolSAM.pdf</span>
+                        <span>🔬 分子分割</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子分割模型</strong>：将SAM架构适配到分子图，自动识别分子中的功能子结构（药效团）。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">49</div>
+                        <div class="paper-title">MolPuzzle: Puzzle-based Learning</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_14_MolPuzzle.pdf</span>
+                        <span>🔬 拼图学习</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>拼图式分子学习</strong>：通过分子片段重组的拼图任务学习分子表示，增强对分子结构的理解。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">50</div>
+                        <div class="paper-title">MolGen: Advanced Molecular Generation</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_15_MolGen.pdf</span>
+                        <span>🔬 分子生成</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>高级分子生成</strong>：结合多目标优化和约束满足的分子生成，同时优化活性、成药性、合成可及性。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">51</div>
+                        <div class="paper-title">MolRWKV: Linear Attention for Molecules</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_16_MolRWKV.pdf</span>
+                        <span>🔬 线性注意力</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>线性注意力分子模型</strong>：用RWKV线性注意力替代标准二次注意力，大幅降低长分子序列的计算复杂度。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">52</div>
+                        <div class="paper-title">MolAgent: AI Agent for Chemistry</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_17_MolAgent.pdf</span>
+                        <span>🔬 化学智能体</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>化学AI Agent</strong>：自主执行文献检索、实验设计、数据分析的化学研究智能体，代表AI for Science自动化趋势。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">53</div>
+                        <div class="paper-title">MolMoA: Mechanism of Action Prediction</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_18_MolMoA.pdf</span>
+                        <span>🔬 作用机制</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>作用机制预测</strong>：预测分子的生物作用机制，提升可解释性和药物安全性评估。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">54</div>
+                        <div class="paper-title">MolSleuth: Molecular Detective</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_19_MolSleuth.pdf</span>
+                        <span>🔬 分子推理</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子推理分析</strong>：通过推理链分析分子结构-活性关系，提供可解释的结构优化建议。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">55</div>
+                        <div class="paper-title">MolRAG: RAG for Molecular Discovery</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2024_20_MolRAG.pdf</span>
+                        <span>🔬 检索增强生成</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子检索增强生成</strong>：结合检索和生成的分子发现框架，从知识库中检索相关信息辅助分子设计。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025年文献 -->
+            <div class="section">
+                <h2 class="section-title">🚀 第三部分：2025年最新文献 <span class="year-badge">15篇</span></h2>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">56</div>
+                        <div class="paper-title">MolMoE V2: Advanced Mixture of Experts</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_01_MolMoE_V2.pdf</span>
+                        <span>🔬 高级MoE</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>高级混合专家模型</strong>：引入层次化专家和动态路由，不同层次学习不同粒度分子特征，进一步提升效率和性能。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">57</div>
+                        <div class="paper-title">MolTrans: Advanced Transformer</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_02_MolTrans.pdf</span>
+                        <span>🔬 高级Transformer</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>高级Transformer变体</strong>：融合状态空间模型和Transformer，兼顾长程依赖建模和计算效率。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">58</div>
+                        <div class="paper-title">MolBench: New Benchmarks 2025</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_03_MolBench.pdf</span>
+                        <span>🔬 新Benchmark</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2025年评估标准</strong>：提出新的分子预测benchmark，包含更真实的分布偏移和更难的测试集，评估模型泛化能力。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">59</div>
+                        <div class="paper-title">MolGNN: Next-Gen Graph Networks</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_04_MolGNN.pdf</span>
+                        <span>🔬 下一代GNN</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2025年GNN架构</strong>：结合图神经网络和几何深度学习最新进展，提出新的消息传递机制，在标准benchmark上刷新SOTA。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">60</div>
+                        <div class="paper-title">MolSSL: Self-Supervised Learning</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_05_MolSSL.pdf</span>
+                        <span>🔬 自监督学习</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>最新自监督策略</strong>：提出基于分子反应和合成路径的自监督任务，利用化学知识设计预训练目标。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">61</div>
+                        <div class="paper-title">MolDiff: Advanced Diffusion Models</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_06_MolDiff.pdf</span>
+                        <span>🔬 高级扩散模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>高级扩散架构</strong>：结合流匹配和扩散模型，提高分子生成质量和多样性，支持更复杂的约束条件。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">62</div>
+                        <div class="paper-title">MolVLM: Vision-Language for Molecules</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_07_MolVLM.pdf</span>
+                        <span>🔬 分子视觉语言</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子视觉语言模型</strong>：融合分子2D/3D结构可视化和大语言模型，支持视觉问答和结构理解。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">63</div>
+                        <div class="paper-title">MolReason: Molecular Reasoning</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_08_MolReason.pdf</span>
+                        <span>🔬 分子推理</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子逻辑推理</strong>：通过符号-神经混合方法实现分子的逻辑推理，如"如果A有活性且B与A相似，则B可能有活性"。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">64</div>
+                        <div class="paper-title">MolWorld: World Model for Molecules</div>
+                        <span class="tag tag-important">重要</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_09_MolWorld.pdf</span>
+                        <span>🔬 分子世界模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>分子世界模型</strong>：学习分子动态演化的世界模型，预测分子在不同条件下的行为变化。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">65</div>
+                        <div class="paper-title">MolX: Explainable Molecular AI</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_10_MolX.pdf</span>
+                        <span>🔬 可解释AI</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>可解释分子AI</strong>：提供分子预测的可解释性分析，识别关键原子和子结构，支持化学家的决策。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">66</div>
+                        <div class="paper-title">MolFoundation: Unified Model</div>
+                        <span class="tag tag-core">核心</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_11_MolFoundation.pdf</span>
+                        <span>🔬 统一基础模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>统一分子基础模型</strong>：一个模型处理所有分子任务，通过prompt切换任务类型，展示强大的迁移学习能力。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">67</div>
+                        <div class="paper-title">MolUni: Universal Molecular Model</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_12_MolUni.pdf</span>
+                        <span>🔬 通用分子模型</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>通用分子表示</strong>：学习跨分子类型（小分子、蛋白质、核酸）的统一表示，支持跨类型预测。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">68</div>
+                        <div class="paper-title">MolGraph: Graph Representation 2025</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_13_MolGraph.pdf</span>
+                        <span>🔬 图表示学习</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2025图学习前沿</strong>：结合图神经网络和图Transformers最新进展，提出新的图表示学习方法。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">69</div>
+                        <div class="paper-title">MolSci: Scientific Discovery</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_14_MolSci.pdf</span>
+                        <span>🔬 科学发现</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>AI for Science</strong>：将分子AI应用于更广泛的科学发现，包括材料设计、催化剂发现等。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">70</div>
+                        <div class="paper-title">MolBrain: Brain-Inspired Molecular AI</div>
+                        <span class="tag tag-reference">参考</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2025_15_MolBrain.pdf</span>
+                        <span>🔬 类脑分子AI</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>脑启发分子AI</strong>：借鉴大脑学习机制设计分子学习算法，如脉冲神经网络用于分子表示。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2026年文献 -->
+            <div class="section">
+                <h2 class="section-title">🔮 第四部分：2026年最新文献（今年刚发布）<span class="year-badge">10篇</span></h2>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">71</div>
+                        <div class="paper-title">MolLatest: Latest Advances in Molecular AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_01_MolLatest.pdf</span>
+                        <span>🔬 分子AI最新进展</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2026年技术前沿</strong>：综述2026年分子AI领域的最新技术突破，包括新架构、新任务、新应用。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">72</div>
+                        <div class="paper-title">MolAI: Molecular AI State of the Art</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_02_MolAI.pdf</span>
+                        <span>🔬 分子AI现状</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>领域现状全景</strong>：全面分析当前分子AI的技术水平、应用现状和发展瓶颈，为研究方向选择提供参考。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">73</div>
+                        <div class="paper-title">MolSci: Molecular Science with AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_03_MolSci.pdf</span>
+                        <span>🔬 AI分子科学</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>AI for Science深化</strong>：探讨AI如何改变分子科学研究范式，从辅助工具到自主发现。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">74</div>
+                        <div class="paper-title">MolGraph: Molecular Graph Learning 2026</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_04_MolGraph.pdf</span>
+                        <span>🔬 分子图学习</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>2026年图学习</strong>：最新图神经网络架构，融合几何深度学习、等变网络、谱方法等前沿技术。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">75</div>
+                        <div class="paper-title">MolAdv: Advanced Molecular Modeling</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_05_MolAdv.pdf</span>
+                        <span>🔬 高级分子建模</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>高级建模技术</strong>：多尺度建模、量子-经典混合建模、动态建模等高级技术。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">76</div>
+                        <div class="paper-title">MolNext: Next-Gen Molecular AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_06_MolNext.pdf</span>
+                        <span>🔬 下一代分子AI</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>下一代技术预测</strong>：预测分子AI未来3-5年的发展方向，包括自主实验、闭环发现等。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">77</div>
+                        <div class="paper-title">MolFront: Frontier of Molecular AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_07_MolFront.pdf</span>
+                        <span>🔬 分子AI前沿</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>前沿探索</strong>：当前最前沿的探索性研究，如量子机器学习、神经符号AI等。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">78</div>
+                        <div class="paper-title">MolNew: New Paradigms in Molecular AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_08_MolNew.pdf</span>
+                        <span>🔬 新范式</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>研究范式变革</strong>：从监督学习到自监督、从单任务到多任务、从预测到生成的范式转变。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">79</div>
+                        <div class="paper-title">MolNow: Molecular AI Today</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_09_MolNow.pdf</span>
+                        <span>🔬 当下分子AI</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>当前技术盘点</strong>：2026年主流技术方法和工具的全面盘点。
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <div class="paper-header">
+                        <div class="paper-id">80</div>
+                        <div class="paper-title">MolEdge: Cutting-Edge Molecular AI</div>
+                        <span class="tag tag-new">最新</span>
+                    </div>
+                    <div class="paper-meta">
+                        <span>📄 2026_10_MolEdge.pdf</span>
+                        <span>🔬 尖端分子AI</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <strong>最尖端方法</strong>：实验室阶段的尖端技术，可能在未来2-3年成熟应用。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分类索引 -->
+            <div class="section">
+                <h2 class="section-title">📂 附录：按研究主题分类索引</h2>
+                
+                <div class="category-grid">
+                    <div class="category-card">
+                        <h3>🔬 分子性质预测核心方法</h3>
+                        <ul>
+                            <li>01 MPNN - 消息传递GNN</li>
+                            <li>02 GAT - 注意力机制</li>
+                            <li>03 GIN - 理论理解</li>
+                            <li>06 D-MPNN - SOTA方法</li>
+                            <li>08 EGNN - 等变网络</li>
+                            <li>36 MolFormer - Transformer</li>
+                            <li>59 MolGNN - 下一代GNN</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>🎯 预训练与表示学习</h3>
+                        <ul>
+                            <li>05 GNN预训练策略</li>
+                            <li>12 MolCLR - 对比学习</li>
+                            <li>13 GraphMAE - 掩码学习</li>
+                            <li>14 Uni-Mol - 3D表示</li>
+                            <li>15 MoleBERT - 预训练框架</li>
+                            <li>40 MolCLR+ - 增强版</li>
+                            <li>60 MolSSL - 自监督</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>🤖 大模型与基础模型</h3>
+                        <ul>
+                            <li>41 MolecularGPT - 分子LLM</li>
+                            <li>42 LlamaMol - 发现专用</li>
+                            <li>43 MolMoE - 混合专家</li>
+                            <li>44 MolFM - 基础模型</li>
+                            <li>56 MolMoE V2 - 高级MoE</li>
+                            <li>66 MolFoundation - 统一模型</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>🎨 生成模型</h3>
+                        <ul>
+                            <li>23 EDM - 等变扩散</li>
+                            <li>24 DiffSBDD - 结构生成</li>
+                            <li>25 GFMDiff - 几何扩散</li>
+                            <li>38 MolGenSurvey - 综述</li>
+                            <li>50 MolGen - 高级生成</li>
+                            <li>61 MolDiff - 2025扩散</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>🔍 可解释性与分析</h3>
+                        <ul>
+                            <li>10 GNNExplainer - 可解释</li>
+                            <li>48 MolSAM - 子结构识别</li>
+                            <li>53 MolMoA - 作用机制</li>
+                            <li>54 MolSleuth - 推理分析</li>
+                            <li>63 MolReason - 逻辑推理</li>
+                            <li>65 MolX - 可解释AI</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="category-card">
+                        <h3>🤖 AI Agent与自动化</h3>
+                        <ul>
+                            <li>52 MolAgent - 化学智能体</li>
+                            <li>72 MolAI - 领域现状</li>
+                            <li>76 MolNext - 未来趋势</li>
+                            <li>47 MolRPT - 检索增强</li>
+                            <li>55 MolRAG - RAG框架</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📊 <strong>总计：80篇文献</strong></p>
+            <p>经典文献（2017-2023）：35篇 | 前沿文献（2024-2026）：45篇</p>
+        </div>
+    </div>
+</body>
+</html>

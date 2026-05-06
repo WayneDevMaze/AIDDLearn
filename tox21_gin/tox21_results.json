@@ -1,0 +1,17 @@
+{
+  "dataset": "Tox21 (processed)",
+  "n_samples": 7831,
+  "n_train": 6265,
+  "n_val": 1566,
+  "features": "node_mean [9-dim]",
+  "models": {
+    "MLP": {
+      "auc": 0.5208,
+      "time": 6.8
+    },
+    "GraphNet": {
+      "auc": 0.5007,
+      "time": 8.6
+    }
+  }
+}

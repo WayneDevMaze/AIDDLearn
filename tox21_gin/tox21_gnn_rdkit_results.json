@@ -1,0 +1,30 @@
+{
+  "dataset": "Tox21 (RDKit)",
+  "n_molecules": 7831,
+  "split": "6264/783/784",
+  "features": "rdkit_atom_features(28-dim) + bond_features(6-dim)",
+  "pooling": "mean+max dual pooling",
+  "models": [
+    {
+      "name": "GraphSAGE",
+      "params": 108300,
+      "val_auc": 0.8412,
+      "test_auc": 0.8502,
+      "task_aucs": [
+        0.7527,
+        0.9034,
+        0.8901,
+        0.9066,
+        0.7521,
+        0.8548,
+        0.8392,
+        0.8143,
+        0.8927,
+        0.7952,
+        0.9046,
+        0.8962
+      ],
+      "time": 346.4
+    }
+  ]
+}
